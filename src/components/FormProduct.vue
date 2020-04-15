@@ -15,9 +15,12 @@
                 <option value="derby">derby</option>
                 </select>
             </div>
-            <div class="custom-file">
+            <!-- <div class="custom-file">
                 <input @change="imageUpload" type="file" class="custom-file-input" id="customFile">
                 <label class="custom-file-label" for="customFile">Choose image file or url</label>
+            </div> -->
+            <div class="form-group">
+                <input v-model="product.imageUrl" type="text" class="form-control" id="exampleFormControlInput1" placeholder="image url">
             </div>
             <div id="number">
                 <div class="form-group in-number col-6">
@@ -41,8 +44,8 @@ export default {
           product: {
               productName: '',
               imageUrl: '',
-              price: 0,
-              stock: 0,
+              price: '',
+              stock: '',
               category: ''
           }
       }
@@ -57,6 +60,13 @@ export default {
             category: this.product.category
         }
         this.$store.dispatch('addProduct', payload)
+        .then(res => {
+            this.product.productName = ''
+            this.product.imageUrl = ''
+            this.product.stock = ''
+            this.product.price = ''
+            this.product.category = ''
+        })
       },
       imageUpload(event) {
           this.product.imageUrl = event.target.files[0]

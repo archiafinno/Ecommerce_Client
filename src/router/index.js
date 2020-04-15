@@ -44,6 +44,12 @@ const routes = [
         path: 'formProduct',
         name: 'FormProduct',
         component: () => import('../components/FormProduct.vue')
+      },
+      {
+        path: 'editProduct',
+        name: 'EditProduct',
+        component: () => import('../components/FormEdit.vue'),
+        props: true
       }
     ],
     beforeEnter: (to, from, next) => {

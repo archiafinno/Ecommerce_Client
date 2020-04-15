@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="main_content">
-            <Slide/>
+            <Banner/>
             <div class="info">
                 <div class="container-fluid">
                     <router-view/>
@@ -34,18 +34,21 @@
 </template>
 
 <script>
-import Slide from '../components/Banner.vue'
+import Banner from '../components/Banner.vue'
 
 export default {
   name: 'Dashboard',
   components: {
-    Slide
+    Banner
   },
   methods: {
       logout() {
           localStorage.clear()
           this.$router.push('/login')
       }
+  },
+  created() {
+      this.$store.dispatch('getProducts')
   }
 }
 </script>

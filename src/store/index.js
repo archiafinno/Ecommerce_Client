@@ -52,7 +52,7 @@ export default new Vuex.Store({
         console.log(`err fetching: `, err.response.data.errors)
       })
     },
-    addProduct({commit}, payload) {
+    addProduct({commit, dispatch}, payload) {
       console.log(`add product`)
       console.log(payload)
       axios({
@@ -67,6 +67,47 @@ export default new Vuex.Store({
         console.log(`berhasil add product`)
         console.log(data)
         // commit('SET_PRODUCTS', data)
+      })
+      .catch(err => {
+        console.log(`err fetching: `, err.response.data.errors)
+      })
+    },
+    editProduct({commit},payload) {
+      console.log(`kok ga masuk`)
+      console.log(`============ini idnya==========`, payload.id)
+      console.log(`edit product`)
+      console.log( `ini payload.id`,payload.id)
+      axios({
+        method: 'put',
+        url:  `http://localhost:3000/products/${payload.id}`,
+        headers: {
+          token: localStorage.getItem('token')
+        },
+        data: payload
+      })
+      .then(({data}) => {
+        console.log(`berhasil edit product`)
+        console.log(data)
+        // commit('SET_PRODUCTS', data)
+      })
+      .catch(err => {
+        console.log(`err editing: `, err.response.data.errors)
+      })
+    },
+    delete({commit, dispatch}, payload) {
+      console.log(`delete product`)
+      console.log(payload)
+      axios({
+        method: 'delete',
+        url:  `http://localhost:3000/products/${payload}`,
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
+      .then(({data}) => {
+        console.log(`berhasil delete product`)
+        console.log(data)
+        dispatch('getProducts')
       })
       .catch(err => {
         console.log(`err fetching: `, err.response.data.errors)

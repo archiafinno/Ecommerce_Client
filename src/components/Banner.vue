@@ -22,7 +22,7 @@
 import { Slider, SliderItem } from 'vue-easy-slider'
 
 export default {
-  name: 'Slide',
+  name: 'Banner',
   components: {
     Slider,
     SliderItem
@@ -44,6 +44,21 @@ export default {
         (this.list = [
           {
             backgroundImage: `url(${require('../assets/c6.jpg')})`,
+            width: '100%',
+            height: '100%'
+          },
+          {
+            backgroundImage: `url(${require('../assets/c2.png')})`,
+            width: '100%',
+            height: '100%'
+          },
+          {
+            backgroundImage: `url(${require('../assets/c3.png')})`,
+            width: '100%',
+            height: '100%'
+          },
+          {
+            backgroundImage: `url(${require('../assets/c4.png')})`,
             width: '100%',
             height: '100%'
           }
