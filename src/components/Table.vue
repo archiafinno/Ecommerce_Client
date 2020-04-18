@@ -19,7 +19,7 @@
                         <td>{{product.productName}}</td>
                         <td><img :src="product.imageUrl" alt=""></td>
                         <td>{{product.stock}}</td>
-                        <td>{{product.price}}</td>
+                        <td>{{product.price | currency}}</td>
                         <td>{{product.category}}</td>
                         <td>
                             <div class="d-flex justify-content-around">
@@ -93,11 +93,15 @@ export default {
       width: 200px;
   }
   th {
+      vertical-align: center;
+      text-align: center;
       font-size: 22px;
       font-weight: bold;
       font-family: 'tahoma';
   }
   td {
+      vertical-align: center;
+      text-align: center;
       font-size: 17px;
       font-weight: bold;
       font-family: 'tahoma';

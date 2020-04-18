@@ -13,6 +13,7 @@
     "firebase": "^7.14.0",
     "sweetalert2": "^9.10.12",
     "vue": "^2.6.11",
+    "vue-currency-filter": "^5.0.2",
     "vue-easy-slider": "^5.3.2",
     "vue-loading-overlay": "^3.3.2",
     "vue-router": "^3.1.6",
