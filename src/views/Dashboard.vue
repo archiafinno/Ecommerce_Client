@@ -5,7 +5,7 @@
                 <h1><i class="fas fa-shoe-prints"></i> Brada</h1>
                 <ul>
                     <li><router-link :to="{name: 'Table'}" class="nav-link">
-                    <i class="fas fa-align-justify"></i><span>List Product</span>
+                    <i class="fas fa-align-justify"></i><span>Products Table</span>
                     </router-link></li>
                     <li><router-link :to="{name: 'FormProduct'}" class="nav-link">
                     <i class="fas fa-folder-plus"></i><span>Add Product</span>
@@ -18,37 +18,27 @@
             </div>
         </div>
         <div class="main_content">
-            <Banner/>
             <div class="info">
                 <div class="container-fluid">
                     <router-view/>
                 </div>
             </div>
-            <!-- <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Hacktiv8 2020</span></div>
-                </div>
-            </footer> -->
         </div>
     </div>
 </template>
 
 <script>
-import Banner from '../components/Banner.vue'
 
 export default {
   name: 'Dashboard',
-  components: {
-    Banner
-  },
   methods: {
-      logout() {
-          localStorage.clear()
-          this.$router.push('/login')
-      }
+    logout () {
+      localStorage.clear()
+      this.$router.push('/login')
+    }
   },
-  created() {
-      this.$store.dispatch('getProducts')
+  created () {
+    this.$store.dispatch('getProducts')
   }
 }
 </script>

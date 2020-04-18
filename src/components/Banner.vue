@@ -43,22 +43,22 @@ export default {
       () =>
         (this.list = [
           {
-            backgroundImage: `url(${require('../assets/c6.jpg')})`,
+            backgroundImage: `url(${require('../assets/d.jpg')})`,
             width: '100%',
             height: '100%'
           },
           {
-            backgroundImage: `url(${require('../assets/c2.png')})`,
+            backgroundImage: `url(${require('../assets/E.jpg')})`,
             width: '100%',
             height: '100%'
           },
           {
-            backgroundImage: `url(${require('../assets/c3.png')})`,
+            backgroundImage: `url(${require('../assets/F.jpg')})`,
             width: '100%',
             height: '100%'
           },
           {
-            backgroundImage: `url(${require('../assets/c4.png')})`,
+            backgroundImage: `url(${require('../assets/G.jpg')})`,
             width: '100%',
             height: '100%'
           }
