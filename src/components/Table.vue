@@ -5,7 +5,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Image</th>
                     <th scope="col">Stock</th>
@@ -17,7 +16,6 @@
 
                 <tbody else v-for="product in this.$store.state.products" :key="product.id">
                     <tr>
-                        <td scope="row">{{product.id}}</td>
                         <td>{{product.productName}}</td>
                         <td><img :src="product.imageUrl" alt=""></td>
                         <td>{{product.stock}}</td>
@@ -31,7 +29,7 @@
                             <div>
                                 <p>|</p>
                             </div>
-                                <a href="#" @click="deleteProduct(product.id)"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#" @click="deleteProduct(product.id, product.imageUrl)"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -44,13 +42,14 @@
 <script>
 import Swal from 'sweetalert2'
 import CatButton from './CatButton.vue'
+import firebase from 'firebase'
 export default {
   name: 'Table',
   components: {
     CatButton
   },
   methods: {
-    deleteProduct (payload) {
+    deleteProduct (payload, imageUrl) {
       Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -63,6 +62,7 @@ export default {
         if (result.value) {
           this.$store.dispatch('delete', payload)
             .then(result => {
+              firebase.storage().refFromURL(imageUrl).delete()
               console.log(result)
               Swal.fire(
                 'Deleted!',

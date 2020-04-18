@@ -5,6 +5,7 @@
                 List By Category
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item text-white" @click="getByCategory()">All Products</a>
                 <a class="dropdown-item text-white" @click="getByCategory('sneakers')">sneakers</a>
                 <a class="dropdown-item text-white" @click="getByCategory('trekking')">trekking</a>
                 <a class="dropdown-item text-white" @click="getByCategory('boots')">boots</a>

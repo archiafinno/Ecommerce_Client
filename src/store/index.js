@@ -35,7 +35,7 @@ export default new Vuex.Store({
       console.log(payload)
       return axios({
         method: 'post',
-        url: 'http://localhost:3000/users/login',
+        url: 'https://arcane-depths-40011.herokuapp.com/users/login',
         data: payload
       })
     },
@@ -50,7 +50,7 @@ export default new Vuex.Store({
       if (category) {
         axios({
           method: 'get',
-          url: `http://localhost:3000/products?category=${category}`,
+          url: `https://arcane-depths-40011.herokuapp.com/products?category=${category}`,
           headers: {
             token: localStorage.getItem('token')
           }
@@ -66,7 +66,7 @@ export default new Vuex.Store({
       } else {
         axios({
           method: 'get',
-          url: 'http://localhost:3000/products',
+          url: 'https://arcane-depths-40011.herokuapp.com/products',
           headers: {
             token: localStorage.getItem('token')
           }
@@ -84,7 +84,7 @@ export default new Vuex.Store({
     addProduct ({ commit }, payload) {
       return axios({
         method: 'post',
-        url: 'http://localhost:3000/products',
+        url: 'https://arcane-depths-40011.herokuapp.com/products',
         headers: {
           token: localStorage.getItem('token')
         },
@@ -96,7 +96,7 @@ export default new Vuex.Store({
       console.log('ini payload.id', payload.id)
       return axios({
         method: 'put',
-        url: `http://localhost:3000/products/${payload.id}`,
+        url: `https://arcane-depths-40011.herokuapp.com/products/${payload.id}`,
         headers: {
           token: localStorage.getItem('token')
         },
@@ -108,7 +108,7 @@ export default new Vuex.Store({
       console.log(payload)
       axios({
         method: 'delete',
-        url: `http://localhost:3000/products/${payload}`,
+        url: `https://arcane-depths-40011.herokuapp.com/products/${payload}`,
         headers: {
           token: localStorage.getItem('token')
         }
