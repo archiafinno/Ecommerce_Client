@@ -1,11 +1,13 @@
 <template>
-    <form class="box" @submit.prevent="login">
+  <div class="container-fluid backLogin">
+      <form class="box" @submit.prevent="login">
         <h1>login</h1>
         <input v-model="userData.email" type="email" name="email" placeholder="email">
         <input v-model="userData.password" type="password" name="password" placeholder="Password">
         <input v-if="!loginProgress" type="submit" name="btn" value="Login">
-        <button v-else class="btnProgress">Please Wait ..</button>
-   </form>
+        <button v-else class="btnProgress">Please Wait ...</button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -58,11 +60,14 @@ export default {
 </script>
 
     <style>
-        body {
+        .backLogin {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
-            background: #4b4276;
+            background: url('../assets/bgLogin.jpg');
+            background-repeat: no-repeat;
+            overflow-y: hidden;
+            height: 100vh;
         }
         .box{
             width: 25%;
@@ -73,6 +78,7 @@ export default {
             transform: translate(-50%, -50%);
             background: #191919;
             text-align: center;
+            border-radius: 20px;
         }
         .box h1 {
             color: white;

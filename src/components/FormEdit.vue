@@ -19,9 +19,6 @@
                 <input @change="imageUpload" type="file" class="custom-file-input" id="customFile">
                 <label class="custom-file-label" for="customFile">Choose image file or url</label>
             </div>
-            <!-- <div class="form-group long">
-                <input v-model="data.imageUrl" type="text" class="form-control" id="exampleFormControlInput1" placeholder="image url">
-            </div> -->
             <div id="number">
                 <div class="form-group in-number col-6">
                     <label for="stock">Stock: </label>
