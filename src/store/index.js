@@ -10,7 +10,8 @@ export default new Vuex.Store({
     productsByCategory: [],
     messageError: '',
     messageSuccess: '',
-    error: false
+    error: false,
+    carts: []
   },
   mutations: {
     SET_PRODUCTS (state, payload) {
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     SET_MESSAGE_ERROR (state, payload) {
       state.messageError = payload
+    },
+    SET_CARTS (state, payload) {
+      state.carts = payload
     }
   },
   actions: {
@@ -120,8 +124,37 @@ export default new Vuex.Store({
         .catch(err => {
           console.log('delete err: ', err.response.data.errors)
         })
+    },
+    fetchCarts ({ commit }, payload) {
+      return axios({
+        method: 'get',
+        url: 'https://arcane-depths-40011.herokuapp.com/carts/orders',
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
+        .then(({ data }) => {
+          console.log('success fetching cart', data.Carts)
+          commit('SET_CARTS', data.Carts)
+        })
+        .catch(err => {
+          console.log('error fetch cart', err.response.data.errors[0].message)
+        })
+    },
+    send ({ commit }, payload) {
+      return axios({
+        method: 'post',
+        url: 'https://arcane-depths-40011.herokuapp.com/carts/delivered',
+        headers: {
+          token: localStorage.getItem('token')
+        },
+        data: {
+          productName: payload.productName,
+          UserId: payload.UserId,
+          CartId: payload.id,
+          imageUrl: payload.imageUrl
+        }
+      })
     }
-  },
-  modules: {
   }
 })

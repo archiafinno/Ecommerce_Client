@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "firebase": "^7.14.0",
+    "socket.io-client": "^2.3.0",
     "sweetalert2": "^9.10.12",
     "vue": "^2.6.11",
     "vue-currency-filter": "^5.0.2",

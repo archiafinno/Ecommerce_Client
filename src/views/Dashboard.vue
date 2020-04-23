@@ -10,6 +10,9 @@
                     <li><router-link :to="{name: 'FormProduct'}" class="nav-link">
                     <i class="fas fa-folder-plus"></i><span>Add Product</span>
                     </router-link></li>
+                    <li><router-link :to="{name: 'Order'}" class="nav-link">
+                    <i class="fas fa-folder-plus"></i><span>Order</span>
+                    </router-link></li>
                 </ul>
             </div>
             <div id="right-container">
