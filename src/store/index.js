@@ -143,7 +143,7 @@ export default new Vuex.Store({
     },
     send ({ commit }, payload) {
       return axios({
-        method: 'post',
+        method: 'patch',
         url: 'https://arcane-depths-40011.herokuapp.com/carts/delivered',
         headers: {
           token: localStorage.getItem('token')
