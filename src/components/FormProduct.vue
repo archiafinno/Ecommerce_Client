@@ -184,7 +184,7 @@ export default {
         margin-top: 20px;
         width: 200px;
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1024px) {
       #formAdd {width: 100%;}
     }
 

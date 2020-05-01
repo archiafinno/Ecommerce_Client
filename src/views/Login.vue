@@ -76,7 +76,7 @@ export default {
             align-items: center;
         }
         .box{
-            width: 450px;
+            width: 420px;
             padding: 40px;
             /* transform: translate(-50%, -50%); */
             background: #191919;

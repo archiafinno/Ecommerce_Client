@@ -123,17 +123,10 @@ export default {
       background: red;
       border-radius: 2px;
   }
-  #topTable {
-      width: 98%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-  }
   .sent i {
     margin-right: 10px;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1024px) {
     #tableOrder {overflow-x: scroll;}
   }
 </style>

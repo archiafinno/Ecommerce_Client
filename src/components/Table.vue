@@ -1,6 +1,11 @@
 <template>
     <div>
         <div id="topTable">
+          <div class="wrapForm container-fluid">
+            <form class="form-inline" >
+                <input v-model="search" class="searchBox form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search">
+            </form>
+          </div>
           <div class="dropdown show mb-0">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   List By Category
@@ -13,9 +18,6 @@
                   <a class="dropdown-item text-white" @click="getByCategory('brogue')">brogue</a>
               </div>
           </div>
-          <form class="form-inline" >
-              <input v-model="search" class="searchBox form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search">
-          </form>
         </div>
         <div id="tableProduct">
             <table class="table">
@@ -201,8 +203,23 @@ export default {
   .searchBox:focus {
     border: 2px solid #2ecc71;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1024px) {
     #tableProduct {overflow-x: scroll;}
+  }
+  @media screen and (max-width: 400px) {
+    #topTable {
+      width: 98%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .wrapForm {
+      margin: auto;
+    }
+    .searchBox {
+      width: 100%;
+    }
   }
 
 </style>

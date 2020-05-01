@@ -2,16 +2,18 @@
     <section>
         <div class="sidebar">
             <h1><i class="fas fa-shoe-prints"></i> Brada</h1>
-            <a><router-link :to="{name: 'Table'}" class="nav-link">
-            <i class="fas fa-align-justify"></i><span>Table</span>
-            </router-link></a>
-            <a><router-link :to="{name: 'FormProduct'}" class="nav-link">
-            <i class="fas fa-folder-plus"></i><span>Add Product</span>
-            </router-link></a>
-            <a><router-link :to="{name: 'Order'}" class="nav-link">
-            <i class="fas fa-folder-plus"></i><span>Order</span>
-            </router-link></a>
-            <button type="button" id="edit-task" class="btn btn-success m-1 mt-4" @click="logout">Logout  <i class="fas fa-sign-out-alt"></i></button>
+            <div class="wrapA">
+                <a><router-link :to="{name: 'Table'}" class="nav-link">
+                <i class="fas fa-align-justify"></i><span>Table</span>
+                </router-link></a>
+                <a><router-link :to="{name: 'FormProduct'}" class="nav-link">
+                <i class="fas fa-folder-plus"></i><span>Add Product</span>
+                </router-link></a>
+                <a><router-link :to="{name: 'Order'}" class="nav-link">
+                <i class="fas fa-folder-plus"></i><span>Order</span>
+                </router-link></a>
+            </div>
+            <button type="button" class="btn btnLogout btn-success m-1 mt-4" @click="logout">Logout  <i class="fas fa-sign-out-alt"></i></button>
         </div>
 
         <div class="main_content">
@@ -144,21 +146,37 @@ export default {
         margin-bottom: 20px;
     }
 
-    @media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
+    @media screen and (max-width: 1024px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .wrapA {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .sidebar a {padding: 6px 14px;}
+        #tableProduct {overflow-x: scroll;}
+        div.main_content {margin-left: 0;}
+        div.main_content .info {
+            margin: 0px;
+        }
     }
-    .sidebar a {float: left; padding: 6px 14px;}
-    #tableProduct {overflow-x: scroll;}
-    div.main_content {margin-left: 0;}
-    }
-
     @media screen and (max-width: 400px) {
-        .sidebar a {
-            text-align: center;
-            float: none;
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        .wrapA i {display: none;}
+        .sidebar a {padding: 6px 4px;}
+        #tableProduct {overflow-x: scroll;}
+        div.main_content {margin-left: 0;}
+        div.main_content .info {
+            margin: 0px;
         }
     }
     /* body {
