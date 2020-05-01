@@ -17,7 +17,7 @@
             </div>
             <div class="custom-file long">
                 <input @change="imageUpload" type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose image file or url</label>
+                <label class="custom-file-label" for="customFile">Choose image</label>
             </div>
             <div id="number">
                 <div class="form-group in-number col-6">
@@ -174,6 +174,9 @@ export default {
     .btn {
         margin-top: 20px;
         width: 200px;
+    }
+    @media screen and (max-width: 700px) {
+      #formEdit {width: 100%;}
     }
 
 </style>

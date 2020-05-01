@@ -1,23 +1,6 @@
 <template>
     <div>
-        <!-- <div id="topTable">
-          <div class="dropdown show mb-0">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  List By Category
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item text-white" @click="getByCategory()">All Products</a>
-                  <a class="dropdown-item text-white" @click="getByCategory('sneakers')">sneakers</a>
-                  <a class="dropdown-item text-white" @click="getByCategory('trekking')">trekking</a>
-                  <a class="dropdown-item text-white" @click="getByCategory('boots')">boots</a>
-                  <a class="dropdown-item text-white" @click="getByCategory('brogue')">brogue</a>
-              </div>
-          </div>
-          <form class="form-inline my-2 my-lg-0" >
-              <input v-model="search" class="searchBox form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search">
-          </form>
-        </div> -->
-        <div id="tableProduct">
+        <div id="tableOrder">
             <table class="table">
                 <thead>
                     <tr>
@@ -25,7 +8,7 @@
                     <th scope="col">Product</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total</th>
-                    <th scope="col">Checkout at</th>
+                    <th scope="col">Checkout</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -47,8 +30,6 @@
 </template>
 
 <script>
-// import Swal from 'sweetalert2'
-// import socket from '../config/socket.js'
 export default {
   name: 'Table',
   computed: {
@@ -121,7 +102,7 @@ export default {
   .table{
       border: 0.2px solid lightgrey;
   }
-  #tableProduct {
+  #tableOrder {
       margin: auto;
       width: 98%;
       overflow-y: scroll;
@@ -152,40 +133,7 @@ export default {
   .sent i {
     margin-right: 10px;
   }
-  /* .dropdown-menu {
-      width: 220px;
-      background: #4b4276;
-      padding: 15px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      border-top: 1px solid rgba(225, 225, 225, 0.05);
+  @media screen and (max-width: 700px) {
+    #tableOrder {overflow-x: scroll;}
   }
-
-  .dropdown {
-      cursor: pointer;
-      margin: 0 20px
-  }
-  .dropdown-item {
-      cursor: pointer;
-      width: 180px;
-      background: #4b4276;
-      padding: 15px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      border-top: 1px solid rgba(225, 225, 225, 0.05);
-  }
-  .dropdown-item:hover {
-      width: 180px;
-      background: #594f8d;
-      padding: 15px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      border-top: 1px solid rgba(225, 225, 225, 0.05);
-  }
-  .searchBox {
-    border: 2px solid #4b4276;
-    background: none;
-    outline: none;
-    border-radius: 20px;
-  }
-  .searchBox:focus {
-    border: 2px solid #2ecc71;
-  } */
 </style>

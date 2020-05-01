@@ -13,7 +13,7 @@
                   <a class="dropdown-item text-white" @click="getByCategory('brogue')">brogue</a>
               </div>
           </div>
-          <form class="form-inline my-2 my-lg-0" >
+          <form class="form-inline" >
               <input v-model="search" class="searchBox form-control mr-sm-2" type="search" placeholder="Search by name" aria-label="Search">
           </form>
         </div>
@@ -196,8 +196,13 @@ export default {
     background: none;
     outline: none;
     border-radius: 20px;
+    margin-top: 15px;
   }
   .searchBox:focus {
     border: 2px solid #2ecc71;
   }
+  @media screen and (max-width: 700px) {
+    #tableProduct {overflow-x: scroll;}
+  }
+
 </style>

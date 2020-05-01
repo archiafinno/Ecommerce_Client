@@ -1,12 +1,14 @@
 <template>
   <div class="container-fluid backLogin">
-      <form class="box" @submit.prevent="login">
-        <h1>login</h1>
-        <input v-model="userData.email" type="email" name="email" placeholder="email">
-        <input v-model="userData.password" type="password" name="password" placeholder="Password">
-        <input v-if="!loginProgress" type="submit" name="btn" value="Login">
-        <button v-else class="btnProgress">Please Wait ...</button>
-    </form>
+      <div class="box">
+        <form @submit.prevent="login">
+          <h1>login</h1>
+          <input v-model="userData.email" type="email" name="email" placeholder="email">
+          <input v-model="userData.password" type="password" name="password" placeholder="Password">
+          <input v-if="!loginProgress" type="submit" name="btn" value="Login">
+          <button v-else class="btnProgress">Please Wait ...</button>
+        </form>
+      </div>
   </div>
 </template>
 
@@ -68,14 +70,15 @@ export default {
             background-repeat: no-repeat;
             overflow-y: hidden;
             height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
         }
         .box{
-            width: 25%;
+            width: 450px;
             padding: 40px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            /* transform: translate(-50%, -50%); */
             background: #191919;
             text-align: center;
             border-radius: 20px;
